@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <color-picker></color-picker>
+  <div id="app" :style="{backgroundColor: val}">
+    <color-picker v-model="val" :color-format='colorFormat'></color-picker>
   </div>
 </template>
 
@@ -12,6 +12,12 @@ export default {
   components: {
     HelloWorld,
     ColorPicker
+  },
+  data () {
+    return {
+      val: '#cccccc',
+      colorFormat: 'hex'
+    }
   }
 }
 </script>
